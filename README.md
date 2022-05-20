@@ -12,8 +12,7 @@ pip install git+https://github.com/berezerker/yolov5_package/
 ```
 ## Usage
 
-### CLI
-This Tensorflow implemention is executable as a CLI tool using the `yolov5_package` command. 
+This model implemention is executable as a CLI tool using the `yolov5_package` command. 
 A basic model is given inside the package. Also runs with a provided image.
 
 ![Example output of the model](image_testyolov5_output.jpg)
