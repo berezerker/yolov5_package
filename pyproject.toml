@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "yolov5_hse"
+version = "0.1.1"
+description = "A demo package of a project using Yolov5 model for HSE course"
+authors = ["Berezkin AA HSE"]
+
+[tool.poetry.dependencies]
+python = "3.9"
+numpy = "1.22.3"
+opencv_python = "4.5.5.64"
+Pillow = "9.1.0"
+tensorflow = "2.9.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
