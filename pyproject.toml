@@ -3,9 +3,15 @@ name = "yolov5_hse"
 version = "0.1.1"
 description = "A demo package of a project using Yolov5 model for HSE course"
 authors = ["Berezkin AA HSE"]
+packages = [{include = "yolov5_hse"}]
+include = ['*.jpeg', '*.tflite', '*.txt']
+
+[tool.poetry.scripts]
+
+demo = 'yolov5_hse.demo:main'
 
 [tool.poetry.dependencies]
-python = "3.9"
+python = ">=3.9, <3.10"
 numpy = "1.22.3"
 opencv_python = "4.5.5.64"
 Pillow = "9.1.0"
