@@ -20,5 +20,19 @@ To be able to see the default working of the demo, simply type demo in the termi
 demo
 ```
 
+# pre-commit usage
+To check for formatting errors, black and pylint was added.
+Usage:
+```bash
+black .
+```
+It will modify files to be more appealing for working.
+Pylint was added to pre-commit hooks, same as black.
+The following command will display all the warnings and errors in formatting:
+```bash
+ pre-commit run -a
+ ```
+ After that, one can safely commit all changes.
+
 
 ![Example output of the model](image_testyolov5_output.jpg)
