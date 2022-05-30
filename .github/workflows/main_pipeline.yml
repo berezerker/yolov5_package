@@ -34,4 +34,3 @@ jobs:
          pip install poetry
          ls
          poetry build
-       working-directory: ./yolov5_package
