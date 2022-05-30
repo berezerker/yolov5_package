@@ -77,12 +77,19 @@ def detect_image(weights, image_url, img_size, conf_thres, iou_thres, class_name
 
         print("FPS:", 1 / (end_time - start_time))
         print("Total Time Taken:", end_time - start_time)
-        cv2.imwrite(save_result_filepath, img[:, :, ::-1])
-        cv2.imshow("result of yolov5", img[:, :, ::-1])
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+        return img
 
-
+def save_image(image_url, detected_image):
+    save_result_filepath = (
+        image_url.split("/")[-1].split(".")[0] + "yolov5_output.jpg"
+        )
+    cv2.imwrite(save_result_filepath, detected_image[:, :, ::-1])
+    
+def show_image(detected_image):
+    cv2.imshow("result of yolov5", detected_image[:, :, ::-1])
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+    
 def main():
     os.getcwd()
     parser = argparse.ArgumentParser()
@@ -120,7 +127,7 @@ def main():
     opt.img_path = pkg_resources.resource_filename("yolov5_hse", "image_test.jpeg")
     opt.class_name = pkg_resources.resource_filename("yolov5_hse", "class_names.txt")
 
-    detect_image(
+    detected_image = detect_image(
         opt.weights,
         opt.img_path,
         opt.img_size,
@@ -128,6 +135,8 @@ def main():
         opt.iou_thres,
         opt.class_name,
     )
+    save_image(opt.img_path, detected_image)
+    show_image(detected_image)
 
 
 if __name__ == "__main__":
