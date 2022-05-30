@@ -32,4 +32,5 @@ jobs:
      - name: Building the package with poetry
        run: |
          pip install poetry
+         ls
          poetry build
