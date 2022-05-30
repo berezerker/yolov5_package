@@ -29,8 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-     - name: Building the package with poetry
+     - name: Installing poetry
        run: |
          pip install poetry
          ls
          poetry build
+       working directory: ./yolov5_package
