@@ -33,6 +33,7 @@ jobs:
       uses: actions/setup-python@v2
     - name: Installing poetry
       run: |
+        echo "GITHUB_WORKSPACE = $GITHUB_WORKSPACE"
         pip install poetry
     - name: Building the package
       run: |
