@@ -26,4 +26,6 @@ jobs:
      - name: Installing poetry
        run: |
          pip install poetry
+     - name: Building the package
+       run: |
          poetry build
