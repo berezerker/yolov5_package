@@ -1,5 +1,5 @@
 numpy == 1.22.3
-opencv-contrib-python
+opencv-python-headless
 Pillow == 9.1.0
 tensorflow == 2.9.0
 black == 22.3.0
