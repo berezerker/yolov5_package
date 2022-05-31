@@ -6,4 +6,4 @@ black == 22.3.0
 pre-commit == 2.18.1
 pylint == 2.13.7
 pytest
-protobuff == 3.19.0
+protobuff == ~3.19.0
