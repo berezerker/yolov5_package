@@ -51,6 +51,7 @@ The following command will display all the warnings and errors in formatting:
  ```bash
  streamlit run web_demo.py
  ```
+ after that, go in your web browser to localhost:8501, there you should see web app opened with a spot to upload an image
 
 
 ![Example output of the model](image_testyolov5_output.jpg)
