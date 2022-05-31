@@ -9,7 +9,7 @@ def web_detect():
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # sys.argv = ["main.py", "", "", ""]
     command = sys.argv[1]
     if command == "detect":
@@ -17,4 +17,4 @@ if __name__ == '__main__':
     elif command == "web_detect":
         web_detect()
     else:
-        print('incorrect command')
+        print("incorrect command")

@@ -69,20 +69,15 @@ def detect_image(weights, image_url, img_size, conf_thres, iou_thres, class_name
                 thickness,
                 cv2.LINE_AA,
             )
-
-        save_result_filepath = (
-            image_url.split("/")[-1].split(".")[0] + "yolov5_output.jpg"
-        )
         end_time = time.time()
 
         print("FPS:", 1 / (end_time - start_time))
         print("Total Time Taken:", end_time - start_time)
-        return img
+    return img
+
 
 def detect_for_web_demo(weights, image, img_size, conf_thres, iou_thres, class_name):
-    
-    start_time = time.time()
-    
+
     original_size = image.size[:2]
     size = (img_size, img_size)
     image_resized = letterbox_image(image, size)
@@ -135,20 +130,20 @@ def detect_for_web_demo(weights, image, img_size, conf_thres, iou_thres, class_n
                 thickness,
                 cv2.LINE_AA,
             )
-        end_time = time.time()
-        return img
+    return img
+
 
 def save_image(image_url, detected_image):
-    save_result_filepath = (
-        image_url.split("/")[-1].split(".")[0] + "yolov5_output.jpg"
-        )
+    save_result_filepath = image_url.split("/")[-1].split(".")[0] + "yolov5_output.jpg"
     cv2.imwrite(save_result_filepath, detected_image[:, :, ::-1])
-    
+
+
 def show_image(detected_image):
     cv2.imshow("result of yolov5", detected_image[:, :, ::-1])
     cv2.waitKey(0)
     cv2.destroyAllWindows()
-    
+
+
 def main():
     os.getcwd()
     parser = argparse.ArgumentParser()
