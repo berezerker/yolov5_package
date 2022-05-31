@@ -33,6 +33,25 @@ The following command will display all the warnings and errors in formatting:
  pre-commit run -a
  ```
  After that, one can safely commit all changes.
+ 
+ # Working with docker
+ to setup docker, from root folder type the following:
+ ```bash
+ docker build -t nms_builder .
+ ```
+ then launch the docker after the build finished
+ ```bash
+ docker container run --name first_try -p 8501:8501 -it -d nms_builder bash && docker container exec -it first_try bash
+ ```
+ change the directory for data/yolov5_stream_demo/
+ ```bash
+ cd data/yolov5_stream_demo
+ ```
+ launch streamlit web_demo:
+ ```bash
+ streamlit run web_demo.py
+ ```
+ after that, go in your web browser to localhost:8501, there you should see web app opened with a spot to upload an image
 
 
 ![Example output of the model](image_testyolov5_output.jpg)
