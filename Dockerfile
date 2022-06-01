@@ -14,5 +14,16 @@ RUN apt-get update \
 RUN python3 -m pip install --upgrade pip \
     && python3 -m pip install build
 COPY . /data
-COPY yolov5_hse/requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+
+COPY dist/yolov5_hse-0.1.1-py3-none-any.whl .
+RUN  python3.9 -m pip install yolov5_hse-0.1.1-py3-none-any.whl
+RUN python3.9 -m pip install streamlit
+
+WORKDIR /app
+
+COPY yolov5_stream_demo /app/
+
+EXPOSE 8501
+
+ENTRYPOINT ["streamlit", "run"]
+CMD ["web_demo.py"]
